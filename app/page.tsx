@@ -1,103 +1,231 @@
-import Image from "next/image";
+// app/page.tsx
+import { FiArrowRight } from 'react-icons/fi';
+import Navbar from '../components/Navbar'
+import GitHubContributions from '../components/GitHubContributions'
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
+import { BsGlobe } from 'react-icons/bs';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+  const skills = [
+    'JavaScript', 'TypeScript', 'Next.js', 'React', 
+    'Prisma', 'MongoDB', 'PostgreSQL', 'Supabase',
+    'MySQL', 'Turborepo', 'Docker', 'AWS',
+    'Redux', 'Tailwind CSS', 'Node.js', 'Express.js',
+    'Git'
+  ];
+
+  return (
+    <>
+    <Navbar />
+    <div className="font-sans max-w-4xl mx-auto px-5 py-8">
+      <header id="home" className="min-h-screen flex flex-col justify-center items-center text-center relative mb-12">
+        {/* Social Media Icons - Top Right */}
+        <div className="absolute top-5 right-5 flex gap-8">
+          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-500 transition">
+            <FaXTwitter className="text-black text-xl" /> {/* Replace with Twitter icon if you have one */}
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700 transition">
+            <FaLinkedin className="text-black text-xl" /> {/* Replace with LinkedIn icon */}
+          </a>
+          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition">
+            <FaGithub className="text-black text-xl" /> {/* Replace with GitHub icon */}
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <div className="max-w-2xl px-4 flex flex-col items-center">
+          {/* Circular Profile Image */}
+          <img 
+            src="/profile.jpg" 
+            alt="Aditya Bansal" 
+            className="w-32 h-32 rounded-full mb-6 object-cover shadow-md"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+          <h1 className="text-4xl font-bold mb-4">Hi, I'm Aditya</h1>
+          <p className="text-lg leading-relaxed mb-6">
+            19, I break things, learn fast, and make shit happen. deep into code and cs; anything that pushes the limits. 
+            history, curiosity, cricket, and great books shaped me. still chasing mastery.
+          </p>
+          <p className="mb-8">If you're working on something real, let's talk.</p>
+          <div className="flex gap-3 justify-center">
+            <button className="bg-black text-white px-4 py-2 rounded-md text-sm font-medium">
+              Book a meet
+            </button>
+            <button className="border border-black px-4 py-2 rounded-md text-sm font-medium">
+              Get in touch
+            </button>
+          </div>
+        </div>
+      </header>
+
+
+      {/* Proof of Work */}
+      <section id="work" className="mb-16">
+  <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
+
+  <div className="grid md:grid-cols-2 gap-6">
+    {[ 
+      {
+        title: "Enrich Salon Management",
+        description: "Enrich Hair Salon is a salon booking system with online payments and an admin dashboard for managing services and bookings.",
+        tech: ["React", "MUI", "Tailwind CSS", "Razorpay", "Nodemailer", "React Charts", "Node.js", "Express.js", "MongoDB"],
+        website: "#",
+        source: "#"
+      },
+      {
+        title: "Flick.AI",
+        description: "An AI-powered tool with 200+ users designed to refine your tweets with customizations and make them stand out — because GPT just doesn’t get it.",
+        tech: ["Next.js", "TypeScript", "Google Gemini", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+        website: "#",
+        source: "#"
+      },
+      {
+        title: "OrbitToken",
+        description: "A decentralized platform enabling users to launch custom tokens, transfer tokens, and check balances — all on-chain.",
+        tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
+        website: "#",
+        source: "#"
+      },
+      {
+        title: "GhostGram – SaaS platform",
+        description: "An anonymous messaging platform where users securely send and receive messages via unique, authenticated links.",
+        tech: ["Next.js", "TypeScript", "Gemini", "MongoDB", "NextAuth", "Nodemailer", "Tailwind CSS", "Shadcn"],
+        website: "#",
+        source: "#"
+      }
+    ].map((work, idx) => (
+      <div
+        key={idx}
+        className="border border-gray-300 rounded-xl p-6 hover:shadow-md transition"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <h3 className="text-xl font-semibold">{work.title}</h3>
+        </div>
+        <p className="text-gray-600 mb-4">{work.description}</p>
+        <div className="flex flex-wrap gap-2 mb-4 text-xs">
+          {work.tech.map((tech) => (
+            <span
+              key={tech}
+              className="border px-2 py-1 rounded-md text-gray-700 bg-gray-50"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-3 text-sm">
+          <a
+            href={work.website}
+            className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
+          >
+            <BsGlobe className="text-white text-md" /> Website
+          </a>
+          <a
+            href={work.source}
+            className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
+          >
+            <FaGithub className="text-white text-md" /> Source
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+      {/* Experience Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-6 text-center">Experience</h2>
+
+        <div className="space-y-8">
+          {/* English Bhashi */}
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between items-start w-full">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/logos/englishbhashi.png"
+                  alt="English Bhashi Logo"
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="font-bold text-lg">Fullstack Engineer</h3>
+                  <p className="text-gray-600 text-sm">English Bhashi</p>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm whitespace-nowrap">
+                Aug 2024 - Present
+              </p>
+            </div>
+
+            <p className="ml-11 text-gray-500 mt-3">
+              Working on building scalable backend services and designing intuitive
+              UIs for the platform. Implemented authentication, API integrations, and
+              optimized database queries for performance improvements.
+            </p>
+          </div>
+
+          {/* Datacove.ai */}
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between items-start w-full">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/logos/datacove.png"
+                  alt="Datacove.ai Logo"
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="font-bold text-lg">Software Developer - I</h3>
+                  <p className="text-gray-600 text-sm">Datacove.ai</p>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm whitespace-nowrap">
+                Mar 2024 - Sept 2025
+              </p>
+            </div>
+
+            <p className="ml-11 text-gray-500 mt-3">
+              Contributed to developing AI-driven analytics dashboards and automated
+              data pipelines. Collaborated with cross-functional teams to deploy
+              production-ready features and maintain system stability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* GitHub Contributions */}
+      <section className="mb-16 text-center">
+        <h2 className="text-2xl font-bold mb-6">GitHub Contributions</h2>
+
+        {/* Interactive Graph */}
+        <div className="overflow-x-auto">
+          <GitHubContributions />
+        </div>
+      </section>
+
+      <div className="bg-transparent p-8">
+      <section className="mb-16" id="skills">
+        <h2 className="text-black text-3xl font-bold mb-8 text-center">Skills</h2>
+        <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          {skills.map((skill) => (
+            <div 
+              key={skill} 
+              className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+      <footer className="text-center text-gray-500 py-8">
+        Designed and Developed by [Your Name]
       </footer>
     </div>
-  );
+    </>
+  )
 }
