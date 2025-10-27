@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 'use client';
 
 import Link from 'next/link';
@@ -33,7 +32,7 @@ export default function Navbar() {
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="
-            fixed bottom-5 left-1/2 -translate-x-1/2 
+            fixed bottom-3 left-1/2 -translate-x-1/2 
             bg-white/30 dark:bg-gray-900/30 
             backdrop-blur-md
             border border-white/30 dark:border-gray-700/30

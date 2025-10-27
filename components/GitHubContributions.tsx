@@ -67,7 +67,6 @@ export default function GitHubContributions() {
     fetchContributions();
   }, []);
 
-  // Get month labels
   const getMonthLabels = (): MonthLabel[] => {
     if (weeks.length === 0) return [];
 
@@ -76,9 +75,8 @@ export default function GitHubContributions() {
     
     let lastMonth = -1;
     
-    // Take samples from the weeks to display month labels
     const totalWeeks = weeks.length;
-    const sampleRate = Math.ceil(totalWeeks / 12); // Aim for ~12 labels
+    const sampleRate = Math.ceil(totalWeeks / 12);
     
     weeks.forEach((week, weekIndex) => {
       if (week.contributionDays.length > 0) {
@@ -86,7 +84,6 @@ export default function GitHubContributions() {
         const date = new Date(firstDay.date);
         const month = date.getMonth();
         
-        // Add label when month changes and at regular intervals
         if (month !== lastMonth && (weekIndex === 0 || weekIndex % sampleRate === 0)) {
           months.push({
             month: monthNames[month],
@@ -131,7 +128,6 @@ export default function GitHubContributions() {
         ))}
       </div>
 
-      {/* Footer with contributions count and legend */}
       <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
         <span>
           {totalContributions} contributions in the last year

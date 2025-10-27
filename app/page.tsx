@@ -1,4 +1,3 @@
-// app/page.tsx
 import { FiArrowRight } from 'react-icons/fi';
 import Navbar from '../components/Navbar'
 import GitHubContributions from '../components/GitHubContributions'
@@ -23,21 +22,21 @@ export default function Home() {
     <Navbar />
     <div className="font-sans max-w-4xl mx-auto px-5 py-8">
       <header id="home" className="min-h-screen flex flex-col justify-center items-center text-center relative mb-12">
-        {/* Social Media Icons - Top Right */}
+        {/* Social Media Icons */}
         <div className="absolute top-5 right-5 flex gap-8">
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-500 transition">
-            <FaXTwitter className="text-black text-xl" /> {/* Replace with Twitter icon if you have one */}
+          <a href="https://x.com/adityatwt_" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-500 transition">
+            <FaXTwitter className="text-black text-xl" />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700 transition">
-            <FaLinkedin className="text-black text-xl" /> {/* Replace with LinkedIn icon */}
+          <a href="https://www.linkedin.com/in/adityabansal3403/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700 transition">
+            <FaLinkedin className="text-black text-xl" />
           </a>
-          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition">
-            <FaGithub className="text-black text-xl" /> {/* Replace with GitHub icon */}
+          <a href="https://github.com/Aditya3403" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition">
+            <FaGithub className="text-black text-xl" />
           </a>
         </div>
 
         <div className="max-w-2xl px-4 flex flex-col items-center">
-          {/* Circular Profile Image */}
+
           <img 
             src="/profile.jpg" 
             alt="Aditya Bansal" 
@@ -64,76 +63,75 @@ export default function Home() {
 
       {/* Proof of Work */}
       <section id="work" className="mb-16">
-  <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
 
-  <div className="grid md:grid-cols-2 gap-6">
-    {[ 
-      {
-        title: "Enrich Salon Management",
-        description: "Enrich Hair Salon is a salon booking system with online payments and an admin dashboard for managing services and bookings.",
-        tech: ["React", "MUI", "Tailwind CSS", "Razorpay", "Nodemailer", "React Charts", "Node.js", "Express.js", "MongoDB"],
-        website: "#",
-        source: "#"
-      },
-      {
-        title: "Flick.AI",
-        description: "An AI-powered tool with 200+ users designed to refine your tweets with customizations and make them stand out — because GPT just doesn’t get it.",
-        tech: ["Next.js", "TypeScript", "Google Gemini", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
-        website: "#",
-        source: "#"
-      },
-      {
-        title: "OrbitToken",
-        description: "A decentralized platform enabling users to launch custom tokens, transfer tokens, and check balances — all on-chain.",
-        tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
-        website: "#",
-        source: "#"
-      },
-      {
-        title: "GhostGram – SaaS platform",
-        description: "An anonymous messaging platform where users securely send and receive messages via unique, authenticated links.",
-        tech: ["Next.js", "TypeScript", "Gemini", "MongoDB", "NextAuth", "Nodemailer", "Tailwind CSS", "Shadcn"],
-        website: "#",
-        source: "#"
-      }
-    ].map((work, idx) => (
-      <div
-        key={idx}
-        className="border border-gray-300 rounded-xl p-6 hover:shadow-md transition"
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <h3 className="text-xl font-semibold">{work.title}</h3>
-        </div>
-        <p className="text-gray-600 mb-4">{work.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4 text-xs">
-          {work.tech.map((tech) => (
-            <span
-              key={tech}
-              className="border px-2 py-1 rounded-md text-gray-700 bg-gray-50"
+        <div className="grid md:grid-cols-2 gap-6">
+          {[ 
+            {
+              title: "Enrich Salon Management",
+              description: "Enrich Hair Salon is a salon booking system with online payments and an admin dashboard for managing services and bookings.",
+              tech: ["React", "MUI", "Tailwind CSS", "Razorpay", "Nodemailer", "React Charts", "Node.js", "Express.js", "MongoDB"],
+              website: "#",
+              source: "#"
+            },
+            {
+              title: "Flick.AI",
+              description: "An AI-powered tool with 200+ users designed to refine your tweets with customizations and make them stand out — because GPT just doesn’t get it.",
+              tech: ["Next.js", "TypeScript", "Google Gemini", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+              website: "#",
+              source: "#"
+            },
+            {
+              title: "OrbitToken",
+              description: "A decentralized platform enabling users to launch custom tokens, transfer tokens, and check balances — all on-chain.",
+              tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
+              website: "#",
+              source: "#"
+            },
+            {
+              title: "GhostGram – SaaS platform",
+              description: "An anonymous messaging platform where users securely send and receive messages via unique, authenticated links.",
+              tech: ["Next.js", "TypeScript", "Gemini", "MongoDB", "NextAuth", "Nodemailer", "Tailwind CSS", "Shadcn"],
+              website: "#",
+              source: "#"
+            }
+          ].map((work, idx) => (
+            <div
+              key={idx}
+              className="border border-gray-300 rounded-xl p-6 hover:shadow-md transition"
             >
-              {tech}
-            </span>
+              <div className="flex items-center gap-3 mb-3">
+                <h3 className="text-xl font-semibold">{work.title}</h3>
+              </div>
+              <p className="text-gray-600 mb-4">{work.description}</p>
+              <div className="flex flex-wrap gap-2 mb-4 text-xs">
+                {work.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border px-2 py-1 rounded-md text-gray-700 bg-gray-50"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-3 text-sm">
+                <a
+                  href={work.website}
+                  className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
+                >
+                  <BsGlobe className="text-white text-md" /> Website
+                </a>
+                <a
+                  href={work.source}
+                  className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
+                >
+                  <FaGithub className="text-white text-md" /> Source
+                </a>
+              </div>
+            </div>
           ))}
         </div>
-        <div className="flex gap-3 text-sm">
-          <a
-            href={work.website}
-            className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
-          >
-            <BsGlobe className="text-white text-md" /> Website
-          </a>
-          <a
-            href={work.source}
-            className="flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-md"
-          >
-            <FaGithub className="text-white text-md" /> Source
-          </a>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
+      </section>
 
 
       {/* Experience Section */}
@@ -199,8 +197,6 @@ export default function Home() {
       {/* GitHub Contributions */}
       <section className="mb-16 text-center">
         <h2 className="text-2xl font-bold mb-6">GitHub Contributions</h2>
-
-        {/* Interactive Graph */}
         <div className="overflow-x-auto">
           <GitHubContributions />
         </div>
@@ -223,8 +219,17 @@ export default function Home() {
     </div>
 
       <footer className="text-center text-gray-500 py-8">
-        Designed and Developed by [Your Name]
+        Designed and Developed by{" "}
+        <a
+          href="https://twitter.com/adityatwt_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline"
+        >
+          @adityatwt_
+        </a>
       </footer>
+
     </div>
     </>
   )
