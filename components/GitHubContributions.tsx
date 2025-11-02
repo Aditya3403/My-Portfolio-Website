@@ -106,7 +106,7 @@ export default function GitHubContributions() {
         {monthLabels.map((label, index) => (
           <div
             key={index}
-            className="text-xs text-gray-500"
+            className="text-xs text-gray-500 dark:text-white"
           >
             {label.month}
           </div>
@@ -120,15 +120,15 @@ export default function GitHubContributions() {
             {week.contributionDays.map((day: ContributionDay, dIdx: number) => (
               <div
                 key={dIdx}
-                className="w-3 h-3 mb-[3px] rounded-sm"
-                style={{ backgroundColor: day.contributionCount > 0 ? day.color : '#000000' }}
+                className="w-3 h-3 mb-[3px] rounded-xs"
+                style={{ backgroundColor: day.contributionCount > 0 ? day.color : '#242424ff' }}
               ></div>
             ))}
           </div>
         ))}
       </div>
 
-      <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
+      <div className="flex items-center justify-between mt-2 text-xs text-gray-500 dark:text-white">
         <span>
           {totalContributions} contributions in the last year
         </span>
@@ -136,11 +136,11 @@ export default function GitHubContributions() {
         <div className="flex items-center space-x-2">
           <span>Less</span>
           <div className="flex space-x-[1px]">
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#000000ff' }}></div>
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#9be9a8' }}></div>
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#40c463' }}></div>
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#30a14e' }}></div>
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#216e39' }}></div>
+            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#242424ff' }}></div>
+            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#9be9a8' }}></div>
+            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#40c463' }}></div>
+            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#30a14e' }}></div>
+            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#216e39' }}></div>
           </div>
           <span>More</span>
         </div>
