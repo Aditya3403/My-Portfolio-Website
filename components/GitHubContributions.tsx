@@ -100,7 +100,7 @@ export default function GitHubContributions() {
   const monthLabels = getMonthLabels();
 
   return (
-    <div className="inline-block p-4 rounded-xl">
+    <div className="inline-block border border-dashed border-gray-300 dark:border-gray-700 p-4 rounded-md">
       {/* Month Labels */}
       <div className="flex mb-2 justify-between px-2">
         {monthLabels.map((label, index) => (
@@ -118,11 +118,12 @@ export default function GitHubContributions() {
         {weeks.map((week, wIdx) => (
           <div key={wIdx} className="flex flex-col mr-[3px]">
             {week.contributionDays.map((day: ContributionDay, dIdx: number) => (
-              <div
-                key={dIdx}
-                className="w-3 h-3 mb-[3px] rounded-xs"
-                style={{ backgroundColor: day.contributionCount > 0 ? day.color : '#242424ff' }}
+              <div key={dIdx}
+                className={`w-2.5 h-2.5 mb-[3px] rounded-xs inset-shadow-sm 
+                  ${day.contributionCount === 0 ? 'bg-[#F8F8F8] dark:bg-[#161B22]' : ''}`}
+                style={day.contributionCount > 0 ? { backgroundColor: day.color } : {}}
               ></div>
+
             ))}
           </div>
         ))}
@@ -135,8 +136,8 @@ export default function GitHubContributions() {
         
         <div className="flex items-center space-x-2">
           <span>Less</span>
-          <div className="flex space-x-[1px]">
-            <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#242424ff' }}></div>
+          <div className="flex space-x-[4px]">
+            <div className="w-3 h-3 rounded-xs bg-[#F8F8F8] dark:bg-[#161B22]"></div>
             <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#9be9a8' }}></div>
             <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#40c463' }}></div>
             <div className="w-3 h-3 rounded-xs" style={{ backgroundColor: '#30a14e' }}></div>
