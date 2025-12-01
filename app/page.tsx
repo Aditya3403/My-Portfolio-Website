@@ -1,10 +1,11 @@
-import { FiArrowRight } from 'react-icons/fi';
+"use client"
+
+import { useState } from "react";
 import Navbar from '../components/Navbar'
 import GitHubContributions from '../components/GitHubContributions'
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
-import { BorderBeam } from "@/components/ui/border-beam"
 import { BsGlobe } from 'react-icons/bs';
 import Footer from '@/components/Footer';
 import {
@@ -18,9 +19,6 @@ import {
   siMongodb,
   siMysql,
   siSupabase,
-  siDocker,
-  siGit,
-  siRedux,
   siTailwindcss,
   siFlutter,
 } from "simple-icons/icons";
@@ -29,6 +27,116 @@ import TechBadge from '@/components/TechBadge';
 import Link from 'next/link';
 
 export default function Home() {
+    const [filter, setFilter] = useState("all");
+
+  const projects = [
+    {
+      title: "ZapLanding",
+      description:
+        "Launch faster with AI-built landing pages designed to showcase your brand and convert visitors into customers.",
+      tech: [
+        "Next.js",
+        "React.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "GPT-4.1",
+        "Docker",
+        "MongoDB",
+      ],
+      website: "#",
+      source: "#",
+      type: "all",
+    },
+    {
+      title: "SnapPrice",
+      description:
+        "A cross-platform app that helps users compare item prices across quick-commerce platforms ensuring they always get the best deal without switching between apps.",
+      tech: ["Flutter", "Node.js", "Express.js", "MongoDB", "NextAuth"],
+      website: "#",
+      source: "#",
+      type: "all",
+    },
+    {
+      title: "PicForge",
+      description:
+        "An all-in-one web app that lets users upscale, color-grade, and enhance images in seconds—right from the browser.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      website: "#",
+      source: "#",
+      type: "all",
+    },
+    {
+      title: "Nudgepay",
+      description:
+        "A payment-management tool for freelancers that sends smart invoices and automated WhatsApp payment reminders to get clients to pay on time.",
+      tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Supabase"],
+      website: "https://www.nudgepay.in/",
+      type: "freelance",
+    },
+    {
+      title: "Datacove.ai",
+      description:
+        "A Plug-an-play Agent-as-a-Service platform built to help businesses automate and manage document-heavy tasks across HR, legal, compliance, recruitment, and other domains.",
+      tech: [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      website: "https://datacove.ai/",
+      type: "all",
+    },
+    {
+      title: "Feedback Central",
+      description:
+        "A seamless platform for employees and managers to exchange constructive feedback, fostering growth and organizational excellence.",
+      tech: [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Python",
+        "Fast API",
+        "SQL",
+      ],
+      website: "https://datacove.ai/",
+      source: "#",
+      type: "all",
+    },
+    {
+      title: "Sharechat",
+      description:
+        "A real-time communication app that provides smooth one-to-one messaging, media sharing, and persistent chat history with a modern interface",
+      tech: [
+        "React.js",
+        "CSS",
+        "Socket.io",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      website: "https://datacove.ai/",
+      source: "#",
+      type: "all",
+    },
+  ];
+
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((p) => p.type === "freelance");
 
   return (
     <>
@@ -116,173 +224,108 @@ export default function Home() {
       </header>
 
 
-        {/* Proof of Work */}
+      {/* Proof of Work */}
       <section id="work" className="mb-16">
-        <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            {
-              title: "Enrich Salon Management",
-              description:
-                "Enrich Hair Salon is a salon booking system with online payments and an admin dashboard for managing services and bookings.",
-              tech: [
-                "React",
-                "MUI",
-                "Tailwind CSS",
-                "Razorpay",
-                "Nodemailer",
-                "React Charts",
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-              ],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "Flick.AI",
-              description:
-                "An AI-powered tool with 200+ users designed to refine your tweets with customizations and make them stand out — because GPT just doesn’t get it.",
-              tech: [
-                "Next.js",
-                "TypeScript",
-                "Google Gemini",
-                "Prisma",
-                "PostgreSQL",
-                "NextAuth",
-                "Tailwind CSS",
-              ],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "OrbitToken",
-              description:
-                "A decentralized platform enabling users to launch custom tokens, transfer tokens, and check balances — all on-chain.",
-              tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "GhostGram – SaaS platform",
-              description:
-                "An anonymous messaging platform where users securely send and receive messages via unique, authenticated links.",
-              tech: [
-                "Next.js",
-                "TypeScript",
-                "Gemini",
-                "MongoDB",
-                "NextAuth",
-                "Nodemailer",
-                "Tailwind CSS",
-                "Shadcn",
-              ],
-              website: "#",
-              source: "#",
-            },
-          ].map((work, idx) => (
-            <div
-              key={idx}
-              className="h-full flex flex-col justify-between border border-gray-300 dark:border-gray-700 dark:bg-[#171717] rounded-sm p-6"
-            >
-              <div>
-                <h3 className="text-xl font-semibold dark:text-white mb-3">{work.title}</h3>
+      <div className="flex justify-center mb-6">
+        <div className="flex gap-2 bg-transparent border border-gray-300 dark:border-gray-600 rounded-md px-1 py-1">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-1.5 rounded-md text-sm transition-all border
+              ${
+                filter === "all"
+                  ? "border-gray-300 shadow-sm bg-transparent text-black dark:bg-white dark:text-black"
+                  : "border-transparent bg-transparent text-gray-700 dark:text-gray-300"
+              }`}
+          >
+            All Projects
+          </button>
 
-                <p className="text-gray-600 dark:text-white mb-4">{work.description}</p>
+          <button
+            onClick={() => setFilter("freelance")}
+            className={`px-4 py-1.5 rounded-md text-sm transition-all border
+              ${
+                filter === "freelance"
+                  ? "border-gray-300 shadow-sm bg-transparent text-black dark:bg-white dark:text-black"
+                  : "border-transparent bg-transparent text-gray-700 dark:text-gray-300"
+              }`}
+          >
+            Freelance Projects
+          </button>
+        </div>
+      </div>
 
-                <div className="flex flex-wrap gap-2 mb-4 text-xs">
-                  {work.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="border border-gray-500/30 inset-shadow-sm inset-shadow-gray-500/30 px-2 py-1 rounded-sm text-gray-700 bg-transparent dark:bg-[#2F2F2F] dark:text-white dark:border dark:border-dashed-white"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+
+
+      <div className="grid md:grid-cols-2 gap-4">
+        {filteredProjects.map((work, idx) => (
+          <div
+            key={idx}
+            className="h-full flex flex-col justify-between border border-gray-300 dark:border-gray-700 dark:bg-[#171717] rounded-sm p-6"
+          >
+            <div>
+              <h3 className="text-xl font-semibold dark:text-white mb-3">
+                {work.title}
+              </h3>
+
+              <p className="text-gray-600 dark:text-white mb-4">
+                {work.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4 text-xs">
+                {work.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border border-gray-500/30 inset-shadow-sm inset-shadow-gray-500/30 px-2 py-1 rounded-sm text-gray-700 bg-transparent dark:bg-[#2F2F2F] dark:text-white dark:border dark:border-dashed-white"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
+            </div>
 
-              <div className="flex gap-3 text-sm">
-                <a
-                  href={work.website}
-                  className="flex items-center gap-1 bg-black dark:bg-[#2F2F2F] text-white px-3 py-1.5 rounded-sm dark:border dark:border-dashed-white"
-                >
-                  <BsGlobe className="dark:text-white" /> Website
-                </a>
+            <div className="flex gap-3 text-sm">
+              <a
+                href={work.website}
+                className="flex items-center gap-1 bg-black dark:bg-[#2F2F2F] text-white px-3 py-1.5 rounded-sm dark:border dark:border-dashed-white"
+              >
+                <BsGlobe className="dark:text-white" /> Website
+              </a>
 
+              {work.source && (
                 <a
                   href={work.source}
                   className="flex items-center gap-1 bg-black dark:bg-[#2F2F2F] text-white px-3 py-1.5 rounded-sm dark:border dark:border-dashed-white"
                 >
                   <FaGithub className="dark:text-white" /> Source
                 </a>
-              </div>
+              )}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        ))}
+      </div>
+    </section>
 
-      <section id="work" className="mb-16">
+      {/* <section id="work" className="mb-16">
         <h2 className="text-2xl font-bold mb-6 text-center">Upcoming Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-4">
           {[
             {
-              title: "Enrich Salon Management",
+              title: "ZapLanding",
               description:
-                "Enrich Hair Salon is a salon booking system with online payments and an admin dashboard for managing services and bookings.",
+                "Launch faster with AI-built landing pages designed to showcase your brand and convert visitors into customers.",
               tech: [
-                "React",
-                "MUI",
+                "Next.js",
+                "React.js",
                 "Tailwind CSS",
-                "Razorpay",
-                "Nodemailer",
-                "React Charts",
+                "TypeScript",
                 "Node.js",
                 "Express.js",
+                "GPT-4.1",
+                "Docker",
                 "MongoDB",
-              ],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "Flick.AI",
-              description:
-                "An AI-powered tool with 200+ users designed to refine your tweets with customizations and make them stand out — because GPT just doesn’t get it.",
-              tech: [
-                "Next.js",
-                "TypeScript",
-                "Google Gemini",
-                "Prisma",
-                "PostgreSQL",
-                "NextAuth",
-                "Tailwind CSS",
-              ],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "OrbitToken",
-              description:
-                "A decentralized platform enabling users to launch custom tokens, transfer tokens, and check balances — all on-chain.",
-              tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
-              website: "#",
-              source: "#",
-            },
-            {
-              title: "GhostGram – SaaS platform",
-              description:
-                "An anonymous messaging platform where users securely send and receive messages via unique, authenticated links.",
-              tech: [
-                "Next.js",
-                "TypeScript",
-                "Gemini",
-                "MongoDB",
-                "NextAuth",
-                "Nodemailer",
-                "Tailwind CSS",
-                "Shadcn",
               ],
               website: "#",
               source: "#",
@@ -327,7 +370,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* GitHub Contributions */}
       <section className="mb-16 text-center">
@@ -347,9 +390,9 @@ export default function Home() {
             <div className="flex flex-row justify-between items-start w-full">
               <div className="flex items-center gap-3">
                 <img
-                  src="/logos/englishbhashi.png"
+                  src="/eb_logo.jpg"
                   alt="English Bhashi Logo"
-                  className="w-8 h-8 rounded-full object-cover"
+                  className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
                   <h3 className="font-bold text-lg dark:text-white">Fullstack Engineer</h3>
@@ -362,7 +405,7 @@ export default function Home() {
             </div>
 
             
-            <div className="ml-11 mt-4 flex flex-col flex-wrap gap-3">
+            <div className="ml-15 mt-4 flex flex-col flex-wrap gap-3">
               <span className="text-md font-semibold dark:text-white">Technologies & Tools</span>
               <div className='flex flex-wrap w-full gap-3'>
                 <TechBadge svg={siNextdotjs.svg} hex={siNextdotjs.hex} label="Next.js" />
@@ -375,10 +418,21 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="ml-11 text-gray-500 mt-3 dark:text-white">
-              Working on building scalable backend services and designing intuitive UIs for the
-              platform. Implemented authentication, API integrations, and optimized database
-              queries for performance improvements.
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - Developed Influencer Panel using Next.js for frontend and Node.js with Express.js for backend to
+              manage influencers onboarding, track campaign performance, and process payouts seamlessly.
+
+            </p>
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - Worked on enhancing the Tap to Record functionality within the platform’s voice-based learning
+              interface. I implemented contextual biasing using the Google Speech-to-Text API, which
+              significantly improved transcription accuracy for Indian-English pronunciations.
+
+            </p>
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - I also lead the development of an innovative AI Calling Feature where users can communicate with
+              AI in real time and get answers of all queries.
+
             </p>
 
             
@@ -389,9 +443,9 @@ export default function Home() {
             <div className="flex flex-row justify-between items-start w-full">
               <div className="flex items-center gap-3">
                 <img
-                  src="/logos/datacove.png"
+                  src="/datacoveai_logo.jpg"
                   alt="Datacove.ai Logo"
-                  className="w-8 h-8 rounded-full object-cover"
+                  className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
                   <h3 className="font-bold text-lg dark:text-white">Software Developer - I</h3>
@@ -403,7 +457,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ml-11 mt-4 flex flex-col flex-wrap gap-3">
+            <div className="ml-15 mt-4 flex flex-col flex-wrap gap-3">
               <span className="text-md font-semibold dark:text-white">Technologies & Tools</span>
               <div className='flex flex-wrap w-full gap-3'>
                 <TechBadge svg={siNextdotjs.svg} hex={siNextdotjs.hex} label="Next.js" />
@@ -416,10 +470,17 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="ml-11 text-gray-500 mt-3 dark:text-white">
-              Contributed to developing AI-driven analytics dashboards and automated data pipelines.
-              Collaborated with cross-functional teams to deploy production-ready features and
-              maintain system stability.
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - Worked on the Frontend (React.js, Next.js) and Backend (Node.js, Express.js) of a web application
+              that powers AI agents.
+
+            </p>
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - Developed user interfaces to manage and interact with AI workflows, improving task handling and
+              agent communication.
+            </p>
+            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
+              - Built and maintained APIs for frontend-backend integration, ensuring smooth data flow and realtime updates across the platform
             </p>
 
            
