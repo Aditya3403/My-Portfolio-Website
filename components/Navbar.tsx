@@ -5,8 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FiHome, FiUser, FiFileText, FiCode } from 'react-icons/fi';
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
@@ -17,6 +20,21 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navigateToSection = (id: string) => {
+    sessionStorage.setItem("scrollTarget", id);
+
+    if (pathname !== "/") {
+      router.push("/");
+    } else {
+      scrollToTarget(id);
+    }
+  };
+
+  const scrollToTarget = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence>
@@ -38,24 +56,18 @@ export default function Navbar() {
         >
           {/* Left section */}
           <div className="flex items-center gap-6">
-            <Link href="#home" aria-label="Home">
-              <FiHome className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-3" />
-            </Link>
-            <Link href="#work" aria-label="Code">
-              <FiCode className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
-            </Link>
-            <Link href="#" aria-label="Resume">
+            <FiHome onClick={() => navigateToSection("home")} className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-3" />
+            <FiCode onClick={() => navigateToSection("work")} className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
+            <Link href="/my-resume" aria-label="Resume">
               <FiFileText className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
             </Link>
-            <Link href="#" aria-label="User">
+            <Link href="/about-me" aria-label="User">
               <FiUser className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
             </Link>
           </div>
 
-          {/* Divider */}
           <div className="w-px h-6 bg-black dark:bg-white dark:text-white mx-2"></div>
 
-          {/* Animated Theme Toggler */}
           <AnimatedThemeToggler duration={400} className="text-black dark:text-white scale-110 transition-all duration-300 hover:ml-3" />
         </motion.nav>
       )}

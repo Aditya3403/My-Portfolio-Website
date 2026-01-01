@@ -13,6 +13,29 @@ export default function ContactPage() {
     message: ""
   });
 
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  } else {
+    alert("Failed to send message. Try again.");
+  }
+};
+
+
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -36,7 +59,7 @@ export default function ContactPage() {
         </p>
 
         {/* Form */}
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
 
           {/* Name + Phone */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

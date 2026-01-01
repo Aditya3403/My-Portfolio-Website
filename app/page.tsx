@@ -25,9 +25,22 @@ import {
 import TooltipIcon from '@/components/TooltipIcon';
 import TechBadge from '@/components/TechBadge';
 import Link from 'next/link';
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-    const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    const target = sessionStorage.getItem("scrollTarget");
+    if (!target) return;
+
+    const el = document.getElementById(target);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      sessionStorage.removeItem("scrollTarget");
+    }
+  }, []);
 
   const projects = [
     {
@@ -200,7 +213,7 @@ export default function Home() {
               flex items-center 
               transition-all
             ">
-              <span className="whitespace-nowrap">More about me</span>
+              <Link href="/about-me" ><span className="whitespace-nowrap">More about me</span></Link>
 
               <span className="
                 ml-0 

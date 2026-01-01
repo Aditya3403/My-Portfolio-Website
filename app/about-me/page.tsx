@@ -4,30 +4,48 @@ import Navbar from "@/components/Navbar";
 export default function Timeline() {
   const timeline = [
     {
-      year: "2025",
+      year: "2026",
       items: [
         "building something new this year, stay tuned.",
       ],
     },
     {
-      year: "2024",
+      year: "2025",
       items: [
-        "dove deep into web development, mastered cutting-edge technologies and builded more the 20 projects.",
-        "started my journey in web3 development, creating decentralized applications and embracing blockchain technology.",
-        "got funded by adobe for an project and proud of the progress i've made so far—each step has been a leap forward in my career.",
+        "completed my Computer Science degree.",
+        "started working as Fullstack Engineer at English Bhashi.",
       ],
     },
     {
       year: "2023",
       items: [
-        "shifted focus from cricket due to family priorities, but gained clarity on my passion for technology.",
-        "started my bca journey without prior programming knowledge and quickly developed a love for coding.",
-        "bought my first laptop and taught myself c programming and web development—sparking my passion for building software.",
+        "dove deep into web development, mastered cutting-edge technologies and builded more the 5 projects.",
+      ],
+    },
+    {
+      year: "2021",
+      items: [
+        "took admission in Computer Science degree at Jaypee University of Information Technology, Solan. ",
+        "started learning about Web Development.",
+      ],
+    },
+    {
+      year: "2005-2019",
+      items: [
+        "completed schooling at Ryan International School, balancing academics with a strong passion for badminton.",
+      ],
+    },
+    {
+      year: "2003",
+      items: [
+        "a Computer Science engineer was born in Chandigarh, India.",
       ],
     },
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="font-sans max-w-3xl mx-auto px-5 py-8">
     <section className="px-6 py-20 max-w-4xl mx-auto">
       
@@ -48,12 +66,10 @@ export default function Timeline() {
               {block.items.map((text, i) => (
                 <div key={i} className="flex items-start gap-4">
                   
-                  {/* Mini Line */}
-                  <div className="w-10 h-[2px] bg-black mt-[10px]"></div>
 
                   {/* Text */}
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    {text}
+                    - {text}
                   </p>
 
                 </div>
@@ -67,5 +83,6 @@ export default function Timeline() {
 
     <Footer/>
     </div>
+    </>
   );
 }
