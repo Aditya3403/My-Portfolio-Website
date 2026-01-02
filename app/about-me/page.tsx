@@ -12,7 +12,7 @@ export default function Timeline() {
     {
       year: "2025",
       items: [
-        "completed my Computer Science degree.",
+        "completed my computer science degree.",
         "started working as Fullstack Engineer at English Bhashi.",
       ],
     },
@@ -25,20 +25,20 @@ export default function Timeline() {
     {
       year: "2021",
       items: [
-        "took admission in Computer Science degree at Jaypee University of Information Technology, Solan. ",
+        "took admission in computer science degree at Jaypee University of Information Technology, Solan. ",
         "started learning about Web Development.",
       ],
     },
     {
       year: "2005-2019",
       items: [
-        "completed schooling at Ryan International School, balancing academics with a strong passion for badminton.",
+        "completed schooling at Ryan International school, balancing academics with a strong passion for badminton.",
       ],
     },
     {
       year: "2003",
       items: [
-        "a Computer Science engineer was born in Chandigarh, India.",
+        "a computer science engineer was born in Chandigarh, India.",
       ],
     },
   ];
@@ -62,11 +62,10 @@ export default function Timeline() {
             {/* Year */}
             <h2 className="text-2xl font-semibold">{block.year}</h2>
 
-            <div className="mt-6 space-y-5">
+            <div className="mt-6 space-y-3">
               {block.items.map((text, i) => (
-                <div key={i} className="flex items-start gap-4">
+                <div key={i} className="flex items-start gap-2">
                   
-
                   {/* Text */}
                   <p className="text-gray-700 text-lg leading-relaxed">
                     - {text}

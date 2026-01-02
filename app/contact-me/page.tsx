@@ -41,6 +41,8 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="font-sans max-w-3xl mx-auto px-5 py-8">
     <section className="min-h-screen bg-white text-black px-6 py-16 flex flex-col items-center">
       
@@ -130,7 +132,7 @@ export default function ContactPage() {
     <Footer/>
 
     </div>
-
+    </>
     
   );
 }
