@@ -6,12 +6,12 @@ export default function ColoredIcon({
   ...props
 }: {
   svg: string;
-  hex: string;
+  hex?: string;
 } & SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
-      fill={`#${hex}`}
+      fill={hex ? `#${hex}` : "currentColor"}
       dangerouslySetInnerHTML={{ __html: svg }}
       {...props}
     />

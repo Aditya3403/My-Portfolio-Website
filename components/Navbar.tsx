@@ -49,26 +49,41 @@ export default function Navbar() {
             bg-white/30 dark:bg-gray-500/30 
             backdrop-blur-md
             border border-white/30 dark:border-gray-700/30
-            shadow-lg rounded-full px-6 py-3 z-50 
-            flex items-center justify-center gap-6
+            shadow-lg rounded-full
+            px-3 sm:px-6
+            py-2 sm:py-3
+            z-50 
+            flex items-center justify-center
+            gap-4 sm:gap-6
             text-gray-700 dark:text-white
           "
         >
           {/* Left section */}
-          <div className="flex items-center gap-6">
-            <FiHome onClick={() => navigateToSection("home")} className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-3" />
-            <FiCode onClick={() => navigateToSection("work")} className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
+          <div className="flex items-center gap-4 sm:gap-6">
+            <FiHome
+              onClick={() => navigateToSection("home")}
+              className="text-black dark:text-white text-xl sm:text-2xl transition-all duration-300 hover:mr-3"
+            />
+            <FiCode
+              onClick={() => navigateToSection("work")}
+              className="text-black dark:text-white text-xl sm:text-2xl transition-all duration-300 hover:mr-4 hover:ml-3"
+            />
             <Link href="/my-resume" aria-label="Resume">
-              <FiFileText className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
+              <FiFileText className="text-black dark:text-white text-xl sm:text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
             </Link>
             <Link href="/about-me" aria-label="User">
-              <FiUser className="text-black dark:text-white text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
+              <FiUser className="text-black dark:text-white text-xl sm:text-2xl transition-all duration-300 hover:mr-4 hover:ml-3" />
             </Link>
           </div>
 
-          <div className="w-px h-6 bg-black dark:bg-white dark:text-white mx-2"></div>
+          {/* Divider */}
+          <div className="w-px h-5 sm:h-6 bg-black dark:bg-white mx-1 sm:mx-2"></div>
 
-          <AnimatedThemeToggler duration={400} className="text-black dark:text-white scale-110 transition-all duration-300 hover:ml-3" />
+          {/* Theme Toggle */}
+          <AnimatedThemeToggler
+            duration={400}
+            className="text-black dark:text-white scale-100 sm:scale-110 transition-all duration-300 hover:ml-3"
+          />
         </motion.nav>
       )}
     </AnimatePresence>

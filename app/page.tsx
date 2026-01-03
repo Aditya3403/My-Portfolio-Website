@@ -25,7 +25,6 @@ import {
 import TooltipIcon from '@/components/TooltipIcon';
 import TechBadge from '@/components/TechBadge';
 import Link from 'next/link';
-import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -154,8 +153,16 @@ export default function Home() {
   return (
     <>
     <Navbar />
-    <div className="font-sans max-w-3xl mx-auto px-5 py-8">
-      <header id="home" className="min-h-screen flex flex-col justify-center items-center text-center relative mb-12">
+    <div className="font-sans max-w-3xl mx-auto px-3 py-6">
+      <header id="home" className="
+        min-h-[50vh] sm:min-h-screen
+        flex flex-col
+        justify-start sm:justify-center
+        items-center
+        text-center
+        relative
+        pt-20 sm:pt-0 md:pt-0
+      ">
         {/* Social Media Icons */}
         <div className="absolute top-5 right-5 flex gap-8">
           <a href="https://x.com/adityatwt_" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-500 transition ">
@@ -174,19 +181,29 @@ export default function Home() {
           <img 
             src="/header-image.jpg" 
             alt="Aditya Bansal" 
-            className="w-32 h-32 rounded-full mb-6 object-cover shadow-md"
+            className="lg:w-32 lg:h-32 w-20 h-20 rounded-full mb-4 sm:mb-6 object-cover shadow-md"
           />
 
-          <h1 className="text-4xl font-bold mb-4">Hi, I'm Aditya</h1>
-          <p className="text-xl leading-relaxed mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Hi, I'm Aditya</h1>
+          <p className="text-base sm:text-xl leading-relaxed mb-4 sm:mb-6">
             I build fast, scalable web apps using{" "}
             
             <TooltipIcon title="TypeScript" svg={siTypescript.svg} hex={siTypescript.hex} className="inline h-6 w-6 align-text-bottom" />{" "},{" "}
             <TooltipIcon title="JavaScript" svg={siJavascript.svg} hex={siJavascript.hex} className="inline h-6 w-6 align-text-bottom" />{" "},{" "}
             <TooltipIcon title="React.js" svg={siReact.svg} hex={siReact.hex} className="inline h-6 w-6 align-text-bottom" />{" "},{" "}
-            <TooltipIcon title="Next.js" svg={siNextdotjs.svg} hex={siNextdotjs.hex} className="inline h-6 w-6 align-text-bottom" />{" "},{" "}
+            <TooltipIcon
+              title="Next.js"
+              svg={siNextdotjs.svg}
+              hex=""
+              className="inline h-6 w-6 align-text-bottom text-black dark:text-white"
+            />{" "},{" "}
             <TooltipIcon title="Node.js" svg={siNodedotjs.svg} hex={siNodedotjs.hex} className="inline h-6 w-6 align-text-bottom" />{" "},{" "}
-            <TooltipIcon title="Express" svg={siExpress.svg} hex={siExpress.hex} className="inline h-6 w-6 align-text-bottom" />{" "}
+            <TooltipIcon
+              title="Express"
+              svg={siExpress.svg}
+              hex=""
+              className="inline h-6 w-6 align-text-bottom text-black dark:text-white"
+            />{" "}
 
             {" "}and modern databases like{" "}
 
@@ -202,8 +219,8 @@ export default function Home() {
             {" "}and pushing ideas into real products.
           </p>
 
-          <p className="text-xl mb-8">If you're building something ambitious, I’d love to contribute.</p>
-          <div className="flex gap-3 justify-center">
+          <p className="text-base sm:text-xl mb-6 sm:mb-8">If you're building something ambitious, I’d love to contribute.</p>
+          <div className="flex flex-col gap-3 justify-center sm:flex sm:flex-row">
             <button className="
               group 
               dark:text-black dark:bg-white 
@@ -237,8 +254,8 @@ export default function Home() {
       </header>
 
 
-      {/* Proof of Work */}
-      <section id="work" className="mb-16">
+    {/* Proof of Work */}
+    <section id="work" className="mt-10 mb-12 sm:mb-16">
       <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
 
       <div className="flex justify-center mb-6">
@@ -249,7 +266,7 @@ export default function Home() {
               ${
                 filter === "all"
                   ? "border-gray-300 shadow-sm bg-transparent text-black dark:bg-white dark:text-black"
-                  : "border-transparent bg-transparent text-gray-700 dark:text-gray-300"
+                  : "border-transparent bg-transparent text-gray-600 dark:text-gray-300"
               }`}
           >
             All Projects
@@ -261,7 +278,7 @@ export default function Home() {
               ${
                 filter === "freelance"
                   ? "border-gray-300 shadow-sm bg-transparent text-black dark:bg-white dark:text-black"
-                  : "border-transparent bg-transparent text-gray-700 dark:text-gray-300"
+                  : "border-transparent bg-transparent text-gray-600 dark:text-gray-300"
               }`}
           >
             Freelance Projects
@@ -269,13 +286,11 @@ export default function Home() {
         </div>
       </div>
 
-
-
       <div className="grid md:grid-cols-2 gap-4">
         {filteredProjects.map((work, idx) => (
           <div
             key={idx}
-            className="h-full flex flex-col justify-between border border-gray-300 dark:border-gray-700 dark:bg-[#171717] rounded-sm p-6"
+            className="h-full flex flex-col justify-between border border-gray-300 dark:border-gray-500/30 dark:bg-[#1C1C1C] rounded-sm p-6"
           >
             <div>
               <h3 className="text-xl font-semibold dark:text-white mb-3">
@@ -400,7 +415,7 @@ export default function Home() {
         <div className="space-y-12">
           {/* English Bhashi */}
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between items-start w-full">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start w-full gap-2 sm:gap-0">
               <div className="flex items-center gap-3">
                 <img
                   src="/eb_logo.jpg"
@@ -408,52 +423,81 @@ export default function Home() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-bold text-lg dark:text-white">Fullstack Engineer</h3>
-                  <p className="text-gray-600 text-sm dark:text-white">English Bhashi</p>
+                  <h3 className="font-bold text-lg dark:text-white">
+                    Fullstack Engineer
+                  </h3>
+                  <p className="text-gray-600 text-sm dark:text-white">
+                    English Bhashi
+                  </p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm whitespace-nowrap dark:text-white">
+
+              <p className="text-gray-400 text-sm sm:whitespace-nowrap dark:text-white">
                 Aug 2024 - Present
               </p>
             </div>
 
-            
-            <div className="ml-15 mt-4 flex flex-col flex-wrap gap-3">
-              <span className="text-md font-semibold dark:text-white">Technologies & Tools</span>
-              <div className='flex flex-wrap w-full gap-3'>
-                <TechBadge svg={siNextdotjs.svg} hex={siNextdotjs.hex} label="Next.js" />
-                <TechBadge svg={siTailwindcss.svg} hex={siTailwindcss.hex} label="Tailwind CSS" />
-                <TechBadge svg={siTypescript.svg} hex={siTypescript.hex} label="TypeScript" />
+            <div className="ml-0 sm:ml-15 mt-4 flex flex-col gap-3">
+              <span className="text-md font-semibold dark:text-white">
+                Technologies & Tools
+              </span>
+
+              <div className="flex flex-wrap gap-3">
+                <TechBadge
+                  svg={siNextdotjs.svg}
+                  hex=""
+                  label="Next.js"
+                />
+                <TechBadge
+                  svg={siTailwindcss.svg}
+                  hex={siTailwindcss.hex}
+                  label="Tailwind CSS"
+                />
+                <TechBadge
+                  svg={siTypescript.svg}
+                  hex={siTypescript.hex}
+                  label="TypeScript"
+                />
                 <TechBadge svg={siReact.svg} hex={siReact.hex} label="React" />
-                <TechBadge svg={siNodedotjs.svg} hex={siNodedotjs.hex} label="Node.js" />
-                <TechBadge svg={siExpress.svg} hex={siExpress.hex} label="Express.js" />
-                <TechBadge svg={siMongodb.svg} hex={siMongodb.hex} label="MongoDB" />
+                <TechBadge
+                  svg={siNodedotjs.svg}
+                  hex={siNodedotjs.hex}
+                  label="Node.js"
+                />
+                <TechBadge
+                  svg={siExpress.svg}
+                  hex=""
+                  label="Express.js"
+                />
+                <TechBadge
+                  svg={siMongodb.svg}
+                  hex={siMongodb.hex}
+                  label="MongoDB"
+                />
               </div>
             </div>
 
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - Developed Influencer Panel using Next.js for frontend and Node.js with Express.js for backend to
-              manage influencers onboarding, track campaign performance, and process payouts seamlessly.
-
-            </p>
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - Worked on enhancing the Tap to Record functionality within the platform’s voice-based learning
-              interface. I implemented contextual biasing using the Google Speech-to-Text API, which
-              significantly improved transcription accuracy for Indian-English pronunciations.
-
-            </p>
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - I also lead the development of an innovative AI Calling Feature where users can communicate with
-              AI in real time and get answers of all queries.
-
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Developed Influencer Panel using Next.js for frontend and Node.js with
+              Express.js for backend to manage influencer onboarding, track campaign
+              performance, and process payouts seamlessly.
             </p>
 
-            
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Enhanced the Tap to Record functionality by implementing contextual
+              biasing using Google Speech-to-Text, improving transcription accuracy for
+              Indian-English pronunciations.
+            </p>
+
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Led development of a real-time AI Calling feature enabling users to
+              communicate with AI and get instant query resolutions.
+            </p>
           </div>
 
           {/* Datacove.ai */}
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between items-start w-full">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start w-full gap-2 sm:gap-0">
               <div className="flex items-center gap-3">
                 <img
                   src="/datacoveai_logo.jpg"
@@ -461,45 +505,74 @@ export default function Home() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-bold text-lg dark:text-white">Software Developer - I</h3>
-                  <p className="text-gray-600 text-sm dark:text-white">Datacove.ai</p>
+                  <h3 className="font-bold text-lg dark:text-white">
+                    Software Developer - I
+                  </h3>
+                  <p className="text-gray-600 text-sm dark:text-white">
+                    Datacove.ai
+                  </p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm whitespace-nowrap dark:text-white">
+
+              <p className="text-gray-400 text-sm sm:whitespace-nowrap dark:text-white">
                 Mar 2024 - Sept 2025
               </p>
             </div>
 
-            <div className="ml-15 mt-4 flex flex-col flex-wrap gap-3">
-              <span className="text-md font-semibold dark:text-white">Technologies & Tools</span>
-              <div className='flex flex-wrap w-full gap-3'>
-                <TechBadge svg={siNextdotjs.svg} hex={siNextdotjs.hex} label="Next.js" />
-                <TechBadge svg={siTailwindcss.svg} hex={siTailwindcss.hex} label="Tailwind CSS" />
-                <TechBadge svg={siTypescript.svg} hex={siTypescript.hex} label="TypeScript" />
+            <div className="ml-0 sm:ml-15 mt-4 flex flex-col gap-3">
+              <span className="text-md font-semibold dark:text-white">
+                Technologies & Tools
+              </span>
+
+              <div className="flex flex-wrap gap-3">
+                <TechBadge svg={siNextdotjs.svg} hex="" label="Next.js" />
+                <TechBadge
+                  svg={siTailwindcss.svg}
+                  hex={siTailwindcss.hex}
+                  label="Tailwind CSS"
+                />
+                <TechBadge
+                  svg={siTypescript.svg}
+                  hex={siTypescript.hex}
+                  label="TypeScript"
+                />
                 <TechBadge svg={siReact.svg} hex={siReact.hex} label="React" />
-                <TechBadge svg={siNodedotjs.svg} hex={siNodedotjs.hex} label="Node.js" />
-                <TechBadge svg={siExpress.svg} hex={siExpress.hex} label="Express.js" />
-                <TechBadge svg={siMongodb.svg} hex={siMongodb.hex} label="MongoDB" />
+                <TechBadge
+                  svg={siNodedotjs.svg}
+                  hex={siNodedotjs.hex}
+                  label="Node.js"
+                />
+                <TechBadge
+                  svg={siExpress.svg}
+                  hex=""
+                  label="Express.js"
+                />
+                <TechBadge
+                  svg={siMongodb.svg}
+                  hex={siMongodb.hex}
+                  label="MongoDB"
+                />
               </div>
             </div>
 
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - Worked on the Frontend (React.js, Next.js) and Backend (Node.js, Express.js) of a web application
-              that powers AI agents.
-
-            </p>
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - Developed user interfaces to manage and interact with AI workflows, improving task handling and
-              agent communication.
-            </p>
-            <p className="ml-15 text-gray-500 mt-3 dark:text-white">
-              - Built and maintained APIs for frontend-backend integration, ensuring smooth data flow and realtime updates across the platform
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Worked on both Frontend (React.js, Next.js) and Backend (Node.js,
+              Express.js) of a web platform powering AI agents.
             </p>
 
-           
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Built intuitive interfaces to manage AI workflows, improving task
+              handling and agent communication.
+            </p>
+
+            <p className="ml-0 sm:ml-15 text-gray-500 mt-3 dark:text-white">
+              - Developed and maintained APIs to ensure smooth frontend-backend data
+              flow and real-time updates.
+            </p>
           </div>
         </div>
       </section>
+
 
       <Footer/>
 

@@ -100,7 +100,7 @@ export default function GitHubContributions() {
   const monthLabels = getMonthLabels();
 
   return (
-    <div className="inline-block border border-dashed border-gray-300 dark:border-gray-700 p-4 rounded-md">
+    <div className="inline-block border border-dashed border-gray-300 dark:border-gray-600 p-4 rounded-md">
       {/* Month Labels */}
       <div className="flex mb-2 justify-between px-2">
         {monthLabels.map((label, index) => (
