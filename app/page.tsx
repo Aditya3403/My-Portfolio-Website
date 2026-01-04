@@ -26,6 +26,7 @@ import TooltipIcon from '@/components/TooltipIcon';
 import TechBadge from '@/components/TechBadge';
 import Link from 'next/link';
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [filter, setFilter] = useState("all");
@@ -178,9 +179,11 @@ export default function Home() {
 
         <div className="max-w-2xl px-4 flex flex-col items-center">
 
-          <img 
-            src="/header-image.jpg" 
-            alt="Aditya Bansal" 
+          <Image
+            src="/header-image.jpg"
+            alt="Aditya Bansal"
+            width={128}
+            height={128}
             className="lg:w-32 lg:h-32 w-20 h-20 rounded-full mb-4 sm:mb-6 object-cover shadow-md"
           />
 
@@ -418,9 +421,11 @@ export default function Home() {
           <div className="flex flex-col">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start w-full gap-2 sm:gap-0">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src="/eb_logo.jpg"
                   alt="English Bhashi Logo"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
@@ -500,9 +505,11 @@ export default function Home() {
           <div className="flex flex-col">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start w-full gap-2 sm:gap-0">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src="/datacoveai_logo.jpg"
                   alt="Datacove.ai Logo"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
