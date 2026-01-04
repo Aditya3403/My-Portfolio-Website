@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="font-sans max-w-3xl mx-auto px-5 sm:py-8">
@@ -18,12 +20,15 @@ export default function Footer() {
         >
           {/* Column 1 */}
           <div className="space-y-1.5 sm:space-y-3">
-            <a href="/" className="block hover:text-black dark:hover:text-white">
+            <Link href="/" className="block hover:text-black dark:hover:text-white">
               Home
-            </a>
-            <a href="/about-me" className="block hover:text-black dark:hover:text-white">
+            </Link>
+            <Link
+              href="/about-me"
+              className="block hover:text-black dark:hover:text-white"
+            >
               About Me
-            </a>
+            </Link>
             <a href="#work" className="block hover:text-black dark:hover:text-white">
               Projects
             </a>
@@ -59,7 +64,7 @@ export default function Footer() {
 
           {/* Column 3 */}
           <div className="space-y-1.5 sm:space-y-3 col-span-3 sm:col-span-1">
-            <a
+            <Link
               href="/contact-me"
               className="
                 block
@@ -78,8 +83,8 @@ export default function Footer() {
                 whitespace-nowrap
               "
             >
-              Let's Work Together
-            </a>
+              Let&apos;s Work Together
+            </Link>
           </div>
         </div>
 

@@ -184,7 +184,7 @@ export default function Home() {
             className="lg:w-32 lg:h-32 w-20 h-20 rounded-full mb-4 sm:mb-6 object-cover shadow-md"
           />
 
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Hi, I'm Aditya</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Hi, I&apos;m Aditya</h1>
           <p className="text-base sm:text-xl leading-relaxed mb-4 sm:mb-6">
             I build fast, scalable web apps using{" "}
             
@@ -219,7 +219,7 @@ export default function Home() {
             {" "}and pushing ideas into real products.
           </p>
 
-          <p className="text-base sm:text-xl mb-6 sm:mb-8">If you're building something ambitious, I’d love to contribute.</p>
+          <p className="text-base sm:text-xl mb-6 sm:mb-8">If you&apos;re building something ambitious, I’d love to contribute.</p>
           <div className="flex flex-col gap-3 justify-center sm:flex sm:flex-row">
             <button className="
               group 

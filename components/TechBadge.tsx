@@ -1,5 +1,3 @@
-import { SVGProps } from "react";
-
 interface TechBadgeProps {
   svg: string;
   hex?: string;

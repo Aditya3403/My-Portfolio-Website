@@ -35,9 +35,11 @@ export default function ContactPage() {
     }
   };
 
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
   return (
     <>
