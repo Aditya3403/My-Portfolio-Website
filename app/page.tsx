@@ -57,8 +57,8 @@ export default function Home() {
         "Docker",
         "MongoDB",
       ],
-      website: "#",
-      source: "#",
+      // website: "#",
+      source: "https://github.com/Aditya3403/zapLanding_frontend.git",
       type: "all",
     },
     {
@@ -66,8 +66,8 @@ export default function Home() {
       description:
         "A cross-platform app that helps users compare item prices across quick-commerce platforms ensuring they always get the best deal without switching between apps.",
       tech: ["Flutter", "Node.js", "Express.js", "MongoDB", "NextAuth"],
-      website: "#",
-      source: "#",
+      // website: "#",
+      source: "https://github.com/Aditya3403/snapPrice_UI.git",
       type: "all",
     },
     {
@@ -82,8 +82,8 @@ export default function Home() {
         "Express.js",
         "MongoDB",
       ],
-      website: "#",
-      source: "#",
+      // website: "#",
+      source: "https://github.com/Aditya3403/All-In-One-Image-Application.git",
       type: "all",
     },
     {
@@ -123,8 +123,8 @@ export default function Home() {
         "Fast API",
         "SQL",
       ],
-      website: "https://datacove.ai/",
-      source: "#",
+      website: "https://feedbackcentral-frontend.vercel.app/",
+      source: "https://github.com/Aditya3403/feedbackcentral-frontend.git",
       type: "all",
     },
     {
@@ -139,8 +139,8 @@ export default function Home() {
         "Express.js",
         "MongoDB",
       ],
-      website: "https://datacove.ai/",
-      source: "#",
+      website: "https://sharechat-frontend.vercel.app/",
+      source: "https://github.com/Aditya3403/sharechat-frontend.git",
       type: "all",
     },
   ];
@@ -314,13 +314,14 @@ export default function Home() {
             </div>
 
             <div className="flex gap-3 text-sm">
-              <a
-                href={work.website}
-                className="flex items-center gap-1 bg-black dark:bg-[#2F2F2F] text-white px-3 py-1.5 rounded-sm dark:border dark:border-dashed-white"
-              >
-                <BsGlobe className="dark:text-white" /> Website
-              </a>
-
+              {work.website && (
+                <a
+                  href={work.website}
+                  className="flex items-center gap-1 bg-black dark:bg-[#2F2F2F] text-white px-3 py-1.5 rounded-sm dark:border dark:border-dashed-white"
+                >
+                  <BsGlobe className="dark:text-white" /> Website
+                </a>
+              )}
               {work.source && (
                 <a
                   href={work.source}
