@@ -1,6 +1,27 @@
+'use client';
+
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const navigateToSection = (id: string) => {
+      sessionStorage.setItem("scrollTarget", id);
+  
+      if (pathname !== "/") {
+        router.push("/");
+      } else {
+        scrollToTarget(id);
+      }
+  };
+  
+  const scrollToTarget = (id: string) => {
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="font-sans max-w-3xl mx-auto px-5 sm:py-8">
       <footer className="w-full border-t border-gray-200 dark:border-gray-600 mt-12 sm:mt-16">
@@ -29,9 +50,12 @@ export default function Footer() {
             >
               About Me
             </Link>
-            <a href="#work" className="block hover:text-black dark:hover:text-white">
+            <button
+              onClick={() => navigateToSection("work")}
+              className="cursor-pointer block hover:text-black dark:hover:text-white text-left"
+            >
               Projects
-            </a>
+            </button>
           </div>
 
           {/* Column 2 */}
