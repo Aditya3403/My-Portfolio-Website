@@ -35,7 +35,7 @@ export default function Footer() {
             grid-cols-3
             gap-8
             text-gray-600
-            text-xs sm:text-sm md:text-lg
+            text-sm sm:text-sm md:text-lg
             dark:text-gray-300
           "
         >
