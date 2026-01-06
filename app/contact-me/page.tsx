@@ -45,13 +45,13 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      <div className="font-sans max-w-3xl mx-auto px-5 py-6 sm:py-8">
+      <div className="font-sans max-w-3xl mx-auto px-2 py-4 sm:py-4">
         <section
           className="
             min-h-[auto] sm:min-h-screen
             text-black dark:text-white
-            px-4 sm:px-6
-            py-10 sm:py-16
+            px-4 sm:px-4
+            py-10 sm:py-10
             flex flex-col items-center
           "
         >

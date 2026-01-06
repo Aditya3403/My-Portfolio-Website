@@ -154,7 +154,7 @@ export default function Home() {
   return (
     <>
     <Navbar />
-    <div className="font-sans max-w-3xl mx-auto px-3 py-6">
+    <div className="font-sans max-w-3xl mx-auto px-2 py-4">
       <header id="home" className="
         min-h-[50vh] sm:min-h-screen
         flex flex-col
@@ -258,7 +258,7 @@ export default function Home() {
 
 
     {/* Proof of Work */}
-    <section id="work" className="mt-10 mb-12 sm:mb-16">
+    <section id="work" className="mt-10 mb-12 sm:mb-12 px-2">
       <h2 className="text-2xl font-bold mb-6 text-center">Proof of Work</h2>
 
       <div className="flex justify-center mb-6">
@@ -405,7 +405,7 @@ export default function Home() {
       </section> */}
 
       {/* GitHub Contributions */}
-      <section className="mb-16 text-center">
+      <section className="px-2 mb-12 text-center">
         <h2 className="text-2xl font-bold mb-6 dark:text-white">GitHub Contributions</h2>
         <div className="overflow-x-auto">
           <GitHubContributions />
@@ -413,7 +413,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="mb-16">
+      <section className="mb-12 px-2">
         <h2 className="text-2xl font-bold mb-6 text-center">Experience</h2>
 
         <div className="space-y-12">

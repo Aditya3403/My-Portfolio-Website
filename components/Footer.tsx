@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="font-sans max-w-3xl mx-auto px-5 sm:py-8">
+    <div className="font-sans max-w-3xl mx-auto px-2 sm:py-8">
       <footer className="w-full border-t border-gray-200 dark:border-gray-600 mt-12 sm:mt-16">
         <div
           className="

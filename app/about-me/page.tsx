@@ -45,8 +45,8 @@ export default function Timeline() {
     <>
       <Navbar />
 
-      <div className="font-sans max-w-3xl mx-auto px-5 py-6 sm:py-8">
-        <section className="px-4 sm:px-6 py-12 sm:py-20 max-w-4xl mx-auto">
+      <div className="font-sans max-w-3xl mx-auto px-2 py-4 sm:py-4">
+        <section className="px-4 sm:px-4 py-10 sm:py-10 max-w-4xl mx-auto">
 
           {/* Title */}
           <h1 className="text-center text-2xl sm:text-3xl font-bold mb-5 sm:mb-8 text-black dark:text-white">
